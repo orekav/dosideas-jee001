@@ -5,13 +5,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Este objeto de dominio utiliza anotaciones para relacionar la clase y sus
- * atributos con una tabla. Hibernate utiliza estas anotaciones para acceder
- * a la base de datos e interactuar con objetos de esta clase.
- *
- * @author ldeseta
- */
 @Entity
 public class Pais implements Serializable {
 
