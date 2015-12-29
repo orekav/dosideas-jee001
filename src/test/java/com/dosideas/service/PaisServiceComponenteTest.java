@@ -11,24 +11,6 @@ import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Esta clase representa un test de componente. Los tests de componentes
- * se encargan de testear una clase en particular, y todas las dependencias
- * que la misma tiene.
- *
- * Este test comprueba el funcionamiento de la clase PaisRepository. Esta clase
- * utiliza Spring Data para acceder a la base de datos. Es necesario tener
- * entonces la base de datos iniciada, con el modelo de datos del workshop
- * cargado (ver archivo "Instrucciones para crear la BD").
- *
- * Para iniciar la base de datos:
- *   Ir al menu Window > Services > Databases > Java DB > Click derecho > Start server
- *
- * Para ejecutar este test en NetBeans:
- *    click derecho > "Test File" (CTRL + F6)
- *
- * @author ldeseta
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = ApplicationConfig.class)
 @Transactional
