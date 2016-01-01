@@ -9,4 +9,6 @@ public interface ProvinciaService {
     public List<Provincia> buscarPorNombreGeneral(String unNombre);
     public List<Provincia> buscarPorNombreDePais(String unNombre);
     public void grabarProvincia(Provincia unaProvincia);
+    public Long borrarPorNombreGeneral(String unNombre);
+    public Long borrarPorNombreExacto(String unNombre);
 }

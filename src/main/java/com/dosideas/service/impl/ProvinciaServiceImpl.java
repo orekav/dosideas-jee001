@@ -57,4 +57,16 @@ public class ProvinciaServiceImpl implements ProvinciaService {
         
         provinciaRepository.save(unaProvincia);
     }
+    
+    @Override
+    public Long borrarPorNombreGeneral(String unNombre){
+        return provinciaRepository.deleteByNombreContainingIgnoreCase(unNombre);        
+    }
+    
+    @Override
+    public Long borrarPorNombreExacto(String unNombre){
+        if(unNombre == null || unNombre.length() < 3)
+            throw new NombreInvalidoException("No me mandes NULO");
+        return provinciaRepository.deleteByNombre(unNombre);
+    }
 }

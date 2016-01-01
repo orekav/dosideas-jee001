@@ -118,4 +118,31 @@ public class ProvinciaServiceTest {
         provinciaService.grabarProvincia(provincia);
     }
     
+    @Test
+    public void borrarPorNombreGeneral_NombreCoincide_BorraTresProvincias(){
+        Long cantidadBorradas = provinciaService.borrarPorNombreGeneral("san");
+        assertEquals(3, cantidadBorradas.longValue());
+    }
+    
+    @Test(expected=NombreInvalidoException.class)
+    public void borrarPorNombreExacto_NombreCorto_tiraExcepcion(){
+        provinciaService.borrarPorNombreExacto("Ab");        
+    }
+    
+    @Test(expected=NombreInvalidoException.class)
+    public void borrarPorNombreExacto_NombreNull_tiraExcepcion(){
+        provinciaService.borrarPorNombreExacto(null);        
+    }
+    
+    @Test
+    public void borrarPorNombreExacto_NombreExiste_BorraUnaProvincia(){
+        Long cantidadBorradas = provinciaService.borrarPorNombreExacto("Cordoba");
+        assertEquals(1, cantidadBorradas.longValue());
+    }
+    
+    @Test
+    public void borrarPorNombreExacto_NombreNoExiste_NoBorra(){
+        Long cantidadBorradas  = provinciaService.borrarPorNombreExacto("Montevideo");        
+        assertEquals(0, cantidadBorradas.longValue());
+    }
 }
